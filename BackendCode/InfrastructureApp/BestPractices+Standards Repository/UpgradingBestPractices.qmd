@@ -1,0 +1,5 @@
+# Python-Django Upgrade Process:
+
+1.  Check the python versions supported by the target Django version.
+2.  Identify the highest python version compatible with TensorFlow-DirectML-Plugin and TensorFlow Official Models (tf-models-nightly). This compatibility will only be confirmed once you are able to pip install this models package.
+

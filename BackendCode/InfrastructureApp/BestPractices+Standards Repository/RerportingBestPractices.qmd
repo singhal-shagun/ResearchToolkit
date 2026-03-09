@@ -1,0 +1,1 @@
+1.  If you are printing 'TRUE/FALSE' in any of the columns, change it to 'Yes/No'. You'd be able to accomplish this by calling the get_FOO_display() method for the FOO property, instead of calling FOO.

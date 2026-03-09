@@ -1,0 +1,29 @@
+{% load static %}
+{% if debug %}
+<script type="py" config="{% static 'InfrastructureApp/pyscript.core2023.11.1.RC3/pyscript.localhost.json' %}">
+{% else %}
+<script type="py" config="{% static 'InfrastructureApp/pyscript.core2023.11.1.RC3/pyscript.production.json' %}">
+{% endif %}
+    from pyscript import document, window
+    from encryption import formValidation, encrypt
+
+    def on_click_of_submit_button(event):
+        fieldIDs = ['id_username', 'id_password', 'id_otp']
+
+        fieldElements = []
+        for fieldID in fieldIDs:
+            if document.getElementById(fieldID) is not None:
+                fieldElements.append(document.getElementById(fieldID))
+
+        fieldsValid = True
+        for fieldElement in fieldElements:
+            if (fieldElement.value.strip() == ""):
+                fieldsValid = False
+                
+        if fieldsValid:
+            public_key = """{{request.session.loginPublicKey|safe}}"""
+            encrypt(public_key, fieldElements)
+        else:
+            event.preventDefault()
+            formValidation(fieldElements)
+</script>

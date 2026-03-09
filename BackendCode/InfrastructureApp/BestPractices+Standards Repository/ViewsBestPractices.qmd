@@ -1,0 +1,11 @@
+1.  Use class-based views (CBVs) if you want the corresponding URLConf to appear in menu.
+2.  Use a RedirectView CBV for parents of Dropdown menus. At some places, where even though a URLConf has a childURLConfs, if I am confident that none of the child URLConfs should have a menu-item, I have even used other CBVs. e.g.: The "Pre-formatted Reports" CBV subclasses the TemplateView class.
+3.  Instead of using Powershell v5, use Powershell v7. However, do not uninstall Powershell v5 as its required by Windows for some of its operations. \
+    To use PowerShell v7, follow these instrustions:
+    1.  Download the MSI file from https://github.com/PowerShell/PowerShell/releases or from https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3&WT.mc_id=THOMASMAURER-blog-thmaure#msi
+    2.  Install using the downloaded MSI package using an account with admin privileges.
+    3.  In visual studio code, perform the following:
+        1.  Ctrl+Shift+P "\>Preferences: Open Settings (UI)"
+        2.  Search for "Terminal › Integrated › Default Profile: Windows"
+        3.  From the dropdown, select the Powershell 7 profile.
+        4.  Close existing integrated terminal in VS Code and start a new terminal.
